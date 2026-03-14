@@ -21,28 +21,7 @@ const funFacts = [
   { icon: '🌐', text: 'Built 4+ live projects' },
 ];
 
-const tabs = ['Timeline', 'My Story', 'Achievements', 'Certifications'];
-
-const storyChapters = [
-  {
-    emoji: '🏫',
-    title: 'School Days',
-    color: '#8b5cf6',
-    text: `From my school days, I was either a top scorer or an average one — it varied. After 10th grade, with an SSC score of 84%, I chose Science. Due to some misguidance, I went with PCMB (Pure Science). It was only in 12th grade that I discovered bifocal subjects like Computer Science, IT, and Electronics — and that's when my interest in technology truly sparked.`,
-  },
-  {
-    emoji: '📸',
-    title: 'Creativity Runs in the Family',
-    color: '#06b6d4',
-    text: `Photography and cinematography were never something I consciously chose — they were already in me, thanks to my Aai (Mom). She was always clicking pictures and recording videos, and that love for capturing moments quietly passed on to me. It became a natural extension of who I am.`,
-  },
-  {
-    emoji: '🎓',
-    title: 'Engineering & Beyond',
-    color: '#10b981',
-    text: `After 12th, based on my CET score, I got into A. P. Shah Institute of Technology to pursue my Bachelor's degree in Information Technology. That's where everything came together — code, creativity, and curiosity. My journey is still in progress, and every new technology or skill I come across only deepens my drive to explore further.`,
-  },
-];
+const tabs = ['Timeline', 'Achievements', 'Certifications'];
 
 // Average CGPA helper
 const completedSems = cgpaData.filter((s) => s.cgpa);
@@ -328,31 +307,6 @@ export default function About() {
                   </div>
                 </div>
 
-              </div>
-            )}
-            {activeTab === 'My Story' && (
-              <div className="tab-content flex flex-col gap-5">
-                <p className="text-sm leading-relaxed italic" style={{ color: c.muted }}>
-                  Every developer has an origin story. Here's mine.
-                </p>
-                {storyChapters.map((ch, i) => (
-                  <div key={i} className="p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5"
-                    style={{ background: c.surface, borderColor: c.border }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = `${ch.color}55`; e.currentTarget.style.boxShadow = `0 8px 24px ${ch.color}18`; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border; e.currentTarget.style.boxShadow = 'none'; }}>
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-2xl">{ch.emoji}</span>
-                      <h4 className="font-bold text-sm" style={{ color: ch.color }}>{ch.title}</h4>
-                    </div>
-                    <p className="text-sm leading-relaxed" style={{ color: c.muted }}>{ch.text}</p>
-                  </div>
-                ))}
-                <div className="p-4 rounded-2xl border text-center"
-                  style={{ background: 'rgba(139,92,246,0.06)', borderColor: 'rgba(139,92,246,0.2)' }}>
-                  <span className="text-sm font-semibold" style={{ color: '#8b5cf6' }}>
-                    🚀 The story continues — one commit at a time.
-                  </span>
-                </div>
               </div>
             )}
             {activeTab === 'Achievements' && (

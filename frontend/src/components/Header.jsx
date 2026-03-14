@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
-const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+const navLinks = ['Home', 'About', 'Genesis', 'Skills', 'Projects', 'Contact'];
 
 export default function Header() {
   const headerRef = useRef(null);
@@ -22,7 +22,8 @@ export default function Header() {
   }, []);
 
   const scrollTo = (id) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+    const sectionId = id.toLowerCase().replace(/\s+/g, '-');
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
 
