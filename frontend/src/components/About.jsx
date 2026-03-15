@@ -127,7 +127,7 @@ export default function About() {
             </p>
 
             {/* Trait cards */}
-            <div className="traits-grid grid grid-cols-2 gap-3 mb-8">
+            <div className="traits-grid grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {traits.map((t) => (
                 <div key={t.label} className="trait-card flex items-center gap-3 p-4 rounded-2xl border cursor-default transition-all duration-300 hover:-translate-y-1"
                   style={{ background: c.surface, borderColor: c.border }}
@@ -142,7 +142,7 @@ export default function About() {
             </div>
 
             {/* Fun facts */}
-            <div className="fun-facts grid grid-cols-2 gap-2">
+            <div className="fun-facts grid grid-cols-1 sm:grid-cols-2 gap-2">
               {funFacts.map((f) => (
                 <div key={f.text} className="fun-fact flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm" style={{ background: c.surface2, color: c.muted }}>
                   <span className="text-base">{f.icon}</span>
