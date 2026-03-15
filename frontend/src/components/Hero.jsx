@@ -4,6 +4,7 @@ import { Github, Instagram, Linkedin, Twitter, ArrowDown, Sparkles, Download } f
 import { personalInfo } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 import heroImg from '../images/Profile_Pic.jpeg';
+import resumePDF from '../resume/Pranav-Ghodke-Resume.pdf';
 
 const ROLES = ['Full-Stack Developer', 'Photographer', 'Cinematographer', 'Creative Technologist'];
 
@@ -159,7 +160,8 @@ export default function Hero() {
                 Get In Touch
               </button>
               <a
-                href="#"
+                href={resumePDF}
+                download="Pranav-Ghodke-Resume.pdf"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5"
                 style={{ background: 'transparent', border: `1px solid ${isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)'}`, color: c.muted, textDecoration: 'none' }}
               >
