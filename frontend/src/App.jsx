@@ -27,7 +27,7 @@ export default function App() {
       <Cursor />
       <NowCoding />
       <Header />
-      <main style={{ position: 'relative', zIndex: 1 }}>
+      <main style={{ position: 'relative' }}>
         <Hero />
         <SectionReveal><About /></SectionReveal>
         <SectionReveal delay={50}><Story /></SectionReveal>
