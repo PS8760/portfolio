@@ -10,14 +10,14 @@ const chapters = [
     emoji: '🏫',
     year: 'School',
     title: 'Where It All Began',
-    color: '#8b5cf6',
+    color: '#FFB800',
     text: `From my school days, I was either a top scorer or an average one — it varied. After 10th grade, with an SSC score of 84%, I chose Science. Due to some misguidance, I went with PCMB (Pure Science). It was only in 12th grade that I discovered bifocal subjects like Computer Science, IT, and Electronics — and that's when my interest in technology truly sparked.`,
   },
   {
     emoji: '📸',
     year: 'Always',
     title: 'Creativity Runs in the Family',
-    color: '#06b6d4',
+    color: '#FF4D00',
     text: `Photography and cinematography were never something I consciously chose — they were already in me, thanks to my Aai (Mom). She was always clicking pictures and recording videos, and that love for capturing moments quietly passed on to me. It became a natural extension of who I am.`,
   },
   {
@@ -35,10 +35,10 @@ export default function Story() {
   const isDark = theme === 'dark';
 
   const c = {
-    bg: isDark ? '#0f0f1a' : '#f5f5f3',
-    surface: isDark ? '#13131f' : '#ffffff',
-    border: isDark ? 'rgba(139,92,246,0.15)' : 'rgba(0,0,0,0.1)',
-    text: isDark ? '#f1f5f9' : '#111111',
+    bg: isDark ? '#111111' : '#f5f5f3',
+    surface: isDark ? '#141414' : '#ffffff',
+    border: isDark ? 'rgba(255,184,0,0.15)' : 'rgba(0,0,0,0.1)',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
   };
 
@@ -63,7 +63,7 @@ export default function Story() {
         {/* Header */}
         <div className="story-header text-center mb-16">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4"
-            style={{ color: '#8b5cf6', background: 'rgba(139,92,246,0.1)', borderColor: 'rgba(139,92,246,0.3)' }}>
+            style={{ color: '#FFB800', background: 'rgba(255,184,0,0.1)', borderColor: 'rgba(255,184,0,0.3)' }}>
             My Story
           </span>
           <h2 className="font-extrabold leading-tight" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: c.text }}>
@@ -78,7 +78,7 @@ export default function Story() {
         <div className="story-chapters relative">
           {/* Vertical line */}
           <div className="absolute left-6 top-0 bottom-0 w-px hidden sm:block"
-            style={{ background: `linear-gradient(to bottom, #8b5cf6, #06b6d4, transparent)` }} />
+            style={{ background: `linear-gradient(to bottom, #FFB800, #FF4D00, transparent)` }} />
 
           <div className="flex flex-col gap-8">
             {chapters.map((ch, i) => (
@@ -109,12 +109,12 @@ export default function Story() {
             {/* Closing note */}
             <div className="story-chapter relative flex gap-6 sm:gap-10 items-start">
               <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl"
-                style={{ background: 'rgba(139,92,246,0.12)', border: '2px dashed rgba(139,92,246,0.4)' }}>
+                style={{ background: 'rgba(255,184,0,0.12)', border: '2px dashed rgba(255,184,0,0.4)' }}>
                 🚀
               </div>
               <div className="flex-1 p-5 rounded-2xl border"
-                style={{ background: 'rgba(139,92,246,0.06)', borderColor: 'rgba(139,92,246,0.25)' }}>
-                <p className="text-sm font-semibold" style={{ color: '#a78bfa' }}>
+                style={{ background: 'rgba(255,184,0,0.06)', borderColor: 'rgba(255,184,0,0.25)' }}>
+                <p className="text-sm font-semibold" style={{ color: '#FFD166' }}>
                   The story continues — one commit at a time.
                 </p>
               </div>

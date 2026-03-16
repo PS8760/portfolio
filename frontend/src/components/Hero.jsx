@@ -87,20 +87,20 @@ export default function Hero() {
   ];
 
   const c = {
-    bg: isDark ? '#0a0a0f' : '#ffffff',
-    text: isDark ? '#f1f5f9' : '#111111',
+    bg: isDark ? '#0a0a0a' : '#ffffff',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
-    surface: isDark ? '#13131f' : '#f5f5f3',
-    border: isDark ? 'rgba(139,92,246,0.18)' : 'rgba(0,0,0,0.1)',
+    surface: isDark ? '#141414' : '#f5f5f3',
+    border: isDark ? 'rgba(255,184,0,0.18)' : 'rgba(0,0,0,0.1)',
   };
 
   return (
     <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden pt-20" style={{ background: c.bg }}>
       {/* Background blobs */}
       <div ref={blob1Ref} className="absolute top-[-120px] right-[-80px] w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.2), transparent 70%)', filter: 'blur(90px)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(255,184,0,0.2), transparent 70%)', filter: 'blur(90px)' }} />
       <div ref={blob2Ref} className="absolute bottom-[-80px] left-[-60px] w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.14), transparent 70%)', filter: 'blur(80px)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(255,77,0,0.14), transparent 70%)', filter: 'blur(80px)' }} />
       <div className="grid-overlay" />
       <div className="noise-overlay" />
 
@@ -113,9 +113,9 @@ export default function Hero() {
             {/* Badge */}
             <div className="hero-badge inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-7"
               style={{
-                color: isDark ? '#a78bfa' : '#111111',
-                background: isDark ? 'rgba(139,92,246,0.1)' : 'rgba(0,0,0,0.06)',
-                border: `1px solid ${isDark ? 'rgba(139,92,246,0.3)' : 'rgba(0,0,0,0.15)'}`,
+                color: isDark ? '#FFD166' : '#111111',
+                background: isDark ? 'rgba(255,184,0,0.1)' : 'rgba(0,0,0,0.06)',
+                border: `1px solid ${isDark ? 'rgba(255,184,0,0.3)' : 'rgba(0,0,0,0.15)'}`,
               }}>
               <span className="w-1.5 h-1.5 rounded-full glow-pulse" style={{ background: isDark ? '#34d399' : '#111111' }} />
               Available for opportunities
@@ -132,7 +132,7 @@ export default function Hero() {
 
             {/* Typewriter role */}
             <div className="hero-role-line flex items-center gap-3 mb-5">
-              <span className="text-xl font-semibold" style={{ color: isDark ? '#8b5cf6' : '#111111' }}>
+              <span className="text-xl font-semibold" style={{ color: isDark ? '#FFB800' : '#111111' }}>
                 {displayed}
                 <span className="typewriter-cursor" />
               </span>
@@ -147,14 +147,14 @@ export default function Hero() {
             <div ref={ctaRef} className="flex flex-wrap gap-3 mb-12">
               <button
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="shimmer-btn inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm text-white cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(139,92,246,0.45)]"
+                className="shimmer-btn inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm text-white cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(255,184,0,0.45)]"
                 style={{ border: 'none' }}
               >
                 View My Work
               </button>
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500 hover:text-violet-400"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-500 hover:text-yellow-400"
                 style={{ background: 'transparent', border: `1px solid ${c.border}`, color: c.text }}
               >
                 Get In Touch
@@ -183,7 +183,7 @@ export default function Hero() {
             <div ref={socialsRef} className="flex gap-3">
               {socials.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
-                  className="flex items-center justify-center w-11 h-11 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:text-violet-400 hover:bg-violet-500/10"
+                  className="flex items-center justify-center w-11 h-11 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:border-yellow-500 hover:text-yellow-400 hover:bg-yellow-500/10"
                   style={{ borderColor: c.border, color: c.muted }}>
                   {s.icon}
                 </a>
@@ -196,10 +196,10 @@ export default function Hero() {
             style={{ width: '260px', flexShrink: 0 }}>
             {/* Glow ring */}
             <div className="absolute inset-0 rounded-3xl pointer-events-none"
-              style={{ background: 'radial-gradient(circle at center, rgba(139,92,246,0.25) 0%, transparent 70%)', filter: 'blur(40px)', transform: 'scale(1.3)' }} />
+              style={{ background: 'radial-gradient(circle at center, rgba(255,184,0,0.25) 0%, transparent 70%)', filter: 'blur(40px)', transform: 'scale(1.3)' }} />
             {/* Decorative border ring */}
             <div className="absolute -inset-1 rounded-3xl pointer-events-none"
-              style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.5), rgba(6,182,212,0.3), rgba(139,92,246,0.1))', padding: '1px', borderRadius: '1.5rem' }}>
+              style={{ background: 'linear-gradient(135deg, rgba(255,184,0,0.5), rgba(255,77,0,0.3), rgba(255,184,0,0.1))', padding: '1px', borderRadius: '1.5rem' }}>
               <div className="w-full h-full rounded-3xl" style={{ background: c.bg }} />
             </div>
             {/* Image */}
@@ -207,8 +207,8 @@ export default function Hero() {
               style={{
                 width: '260px',
                 height: '380px',
-                borderColor: 'rgba(139,92,246,0.35)',
-                boxShadow: '0 30px 80px rgba(139,92,246,0.2)',
+                borderColor: 'rgba(255,184,0,0.35)',
+                boxShadow: '0 30px 80px rgba(255,184,0,0.2)',
               }}>
               <img
                 src={heroImg}
@@ -222,13 +222,13 @@ export default function Hero() {
             </div>
             {/* Floating badge */}
             <div className="absolute -top-4 -left-5 px-4 py-2.5 rounded-2xl border flex items-center gap-2 shadow-xl"
-              style={{ background: c.surface, borderColor: 'rgba(139,92,246,0.3)' }}>
+              style={{ background: c.surface, borderColor: 'rgba(255,184,0,0.3)' }}>
               <span className="w-2 h-2 rounded-full bg-emerald-400 glow-pulse" />
               <span className="text-xs font-bold" style={{ color: c.text }}>Open to Work</span>
             </div>
             {/* Top-right chip */}
             <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl border text-xs font-bold shadow-lg"
-              style={{ background: 'rgba(139,92,246,0.15)', borderColor: 'rgba(139,92,246,0.4)', color: '#a78bfa' }}>
+              style={{ background: 'rgba(255,184,0,0.15)', borderColor: 'rgba(255,184,0,0.4)', color: '#FFD166' }}>
               B.E. IT · APSIT
             </div>
           </div>

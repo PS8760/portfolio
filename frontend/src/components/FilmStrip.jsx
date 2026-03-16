@@ -2,13 +2,13 @@ import { useTheme } from '../context/ThemeContext';
 
 const frames = [
   { emoji: '🥇', label: 'EXALT Poster', sub: '1st Place · 2024', color: '#f59e0b' },
-  { emoji: '🎭', label: 'Drama Performance', sub: '1st Place · 2024', color: '#8b5cf6' },
-  { emoji: '✏️', label: 'DevOps Club Designs', sub: '100+ Creatives · 2025', color: '#06b6d4' },
+  { emoji: '🎭', label: 'Drama Performance', sub: '1st Place · 2024', color: '#FFB800' },
+  { emoji: '✏️', label: 'DevOps Club Designs', sub: '100+ Creatives · 2025', color: '#FF4D00' },
   { emoji: '🥈', label: 'Project Presentation', sub: '2nd Place · 2024', color: '#94a3b8' },
   { emoji: '🤖', label: 'AI for Bharat', sub: 'Finalist · 2025', color: '#10b981' },
   { emoji: '🎞️', label: 'Video Editing', sub: '50+ Videos · 2024', color: '#ef4444' },
   { emoji: '📸', label: 'Photography', sub: 'Creative · Ongoing', color: '#f59e0b' },
-  { emoji: '⚡', label: 'Hackathons', sub: 'Multiple · 2023–25', color: '#8b5cf6' },
+  { emoji: '⚡', label: 'Hackathons', sub: 'Multiple · 2023–25', color: '#FFB800' },
 ];
 
 const doubled = [...frames, ...frames];
@@ -19,7 +19,7 @@ export default function FilmStrip() {
 
   return (
     <section id="creative" style={{
-      background: isDark ? '#0a0a0f' : '#f5f5f3',
+      background: isDark ? '#0a0a0a' : '#f5f5f3',
       padding: '96px 0',
     }}>
       <style>{`
@@ -84,8 +84,8 @@ export default function FilmStrip() {
           display: 'inline-block', fontSize: '0.68rem', fontWeight: 700,
           letterSpacing: '0.1em', textTransform: 'uppercase',
           padding: '5px 14px', borderRadius: '999px',
-          color: '#8b5cf6', background: 'rgba(139,92,246,0.1)',
-          border: '1px solid rgba(139,92,246,0.3)', marginBottom: '14px',
+          color: '#FFB800', background: 'rgba(255,184,0,0.1)',
+          border: '1px solid rgba(255,184,0,0.3)', marginBottom: '14px',
         }}>Creative Works</span>
         <h2 style={{
           fontSize: 'clamp(2rem,5vw,3.2rem)', fontWeight: 800, lineHeight: 1.15,
@@ -105,7 +105,7 @@ export default function FilmStrip() {
         <div style={{ overflowX: 'hidden' }}>
           <div className="fs-holes">
             {Array.from({ length: 40 }).map((_, i) => (
-              <div key={i} className="fs-hole" style={{ background: isDark ? '#0a0a0f' : '#1a1a2e' }} />
+              <div key={i} className="fs-hole" style={{ background: isDark ? '#0a0a0a' : '#1a1a2e' }} />
             ))}
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function FilmStrip() {
         <div style={{ overflowX: 'hidden' }}>
           <div className="fs-holes">
             {Array.from({ length: 40 }).map((_, i) => (
-              <div key={i} className="fs-hole" style={{ background: isDark ? '#0a0a0f' : '#1a1a2e' }} />
+              <div key={i} className="fs-hole" style={{ background: isDark ? '#0a0a0a' : '#1a1a2e' }} />
             ))}
           </div>
         </div>
@@ -147,8 +147,8 @@ export default function FilmStrip() {
 
       {/* Side fades */}
       <div style={{ position: 'relative', height: 0 }}>
-        <div style={{ position: 'absolute', top: '-250px', left: 0, width: '80px', height: '250px', background: `linear-gradient(to right, ${isDark ? '#0a0a0f' : '#f5f5f3'}, transparent)`, pointerEvents: 'none', zIndex: 3 }} />
-        <div style={{ position: 'absolute', top: '-250px', right: 0, width: '80px', height: '250px', background: `linear-gradient(to left, ${isDark ? '#0a0a0f' : '#f5f5f3'}, transparent)`, pointerEvents: 'none', zIndex: 3 }} />
+        <div style={{ position: 'absolute', top: '-250px', left: 0, width: '80px', height: '250px', background: `linear-gradient(to right, ${isDark ? '#0a0a0a' : '#f5f5f3'}, transparent)`, pointerEvents: 'none', zIndex: 3 }} />
+        <div style={{ position: 'absolute', top: '-250px', right: 0, width: '80px', height: '250px', background: `linear-gradient(to left, ${isDark ? '#0a0a0a' : '#f5f5f3'}, transparent)`, pointerEvents: 'none', zIndex: 3 }} />
       </div>
     </section>
   );

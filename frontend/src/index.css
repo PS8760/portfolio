@@ -7,8 +7,8 @@ html {
 body {
   font-family: 'Space Grotesk', sans-serif;
   overflow-x: hidden;
-  background: #0a0a0f;
-  color: #f1f5f9;
+  background: #0a0a0a;
+  color: #ffffff;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -23,14 +23,14 @@ h1, h2, h3, h4 {
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0f; }
-::-webkit-scrollbar-thumb { background: #8b5cf6; border-radius: 2px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #FFB800; border-radius: 2px; }
 html:not(.dark) ::-webkit-scrollbar-track { background: #f0f0f0; }
 html:not(.dark) ::-webkit-scrollbar-thumb { background: #111111; }
 
 /* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, #FFB800, #FF4D00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -48,8 +48,8 @@ html:not(.dark) .gradient-text {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 184, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 184, 0, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
 }
@@ -76,7 +76,7 @@ html:not(.dark) .grid-overlay {
   display: inline-block;
   width: 3px;
   height: 1em;
-  background: #8b5cf6;
+  background: #FFB800;
   margin-left: 4px;
   vertical-align: middle;
   animation: blink 1s step-end infinite;
@@ -98,7 +98,7 @@ html:not(.dark) .typewriter-cursor {
 }
 
 .shimmer-btn {
-  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #8b5cf6);
+  background: linear-gradient(90deg, #FFB800, #FF4D00, #FFB800);
   background-size: 200% auto;
   animation: shimmer 3s linear infinite;
 }
@@ -144,7 +144,7 @@ html:not(.dark) .shimmer-btn {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(139,92,246,0.06), transparent);
+  background: linear-gradient(135deg, rgba(255,184,0,0.06), transparent);
   border-radius: inherit;
 }
 
@@ -156,8 +156,8 @@ html:not(.dark) .stat-card::before {
 .glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 4px rgba(139,92,246,0.5); }
-  50% { box-shadow: 0 0 12px rgba(139,92,246,0.9); }
+  0%, 100% { box-shadow: 0 0 4px rgba(255,184,0,0.5); }
+  50% { box-shadow: 0 0 12px rgba(255,184,0,0.9); }
 }
 
 html:not(.dark) .glow-pulse {
@@ -218,17 +218,6 @@ html:not(.dark) .hero-img-border {
 main > section, main > div {
   position: relative;
   z-index: 1;
-}
-
-/* ── Easter egg confetti ── */
-@keyframes confetti-fall {
-  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
-}
-
-@keyframes easter-pop {
-  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
 /* ── Section reveal animation ── */

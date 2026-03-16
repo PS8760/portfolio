@@ -21,13 +21,13 @@ export default function Contact() {
   const isDark = theme === 'dark';
 
   const c = {
-    bg: isDark ? '#0f0f1a' : '#f5f5f3',
-    surface: isDark ? '#13131f' : '#ffffff',
-    border: isDark ? 'rgba(139,92,246,0.15)' : 'rgba(0,0,0,0.1)',
-    text: isDark ? '#f1f5f9' : '#111111',
+    bg: isDark ? '#111111' : '#f5f5f3',
+    surface: isDark ? '#141414' : '#ffffff',
+    border: isDark ? 'rgba(255,184,0,0.15)' : 'rgba(0,0,0,0.1)',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
     inputBg: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.03)',
-    inputBorder: isDark ? 'rgba(139,92,246,0.2)' : 'rgba(0,0,0,0.15)',
+    inputBorder: isDark ? 'rgba(255,184,0,0.2)' : 'rgba(0,0,0,0.15)',
   };
 
   useEffect(() => {
@@ -106,7 +106,7 @@ export default function Contact() {
 
   const msgLen = form.message.length;
   const msgPct = (msgLen / MAX_MSG) * 100;
-  const msgColor = msgPct > 90 ? '#ef4444' : msgPct > 70 ? '#f59e0b' : '#8b5cf6';
+  const msgColor = msgPct > 90 ? '#ef4444' : msgPct > 70 ? '#f59e0b' : '#FFB800';
 
   return (
     <section id="contact" ref={sectionRef} className="py-24" style={{ background: c.bg }}>
@@ -114,7 +114,7 @@ export default function Contact() {
 
         <div className="text-center mb-14">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4"
-            style={{ color: '#8b5cf6', background: 'rgba(139,92,246,0.1)', borderColor: 'rgba(139,92,246,0.3)' }}>
+            style={{ color: '#FFB800', background: 'rgba(255,184,0,0.1)', borderColor: 'rgba(255,184,0,0.3)' }}>
             Let's Talk
           </span>
           <h2 className="font-extrabold leading-tight" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: c.text }}>
@@ -145,27 +145,27 @@ export default function Contact() {
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
                 <div className="flex items-center gap-3">
-                  <Mail size={16} className="text-violet-400 flex-shrink-0" />
+                  <Mail size={16} className="text-yellow-400 flex-shrink-0" />
                   <span>{personalInfo.email}</span>
                 </div>
                 <button onClick={copyEmail}
                   className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer flex-shrink-0"
                   style={{
-                    background: copied ? 'rgba(16,185,129,0.12)' : 'rgba(139,92,246,0.1)',
-                    color: copied ? '#10b981' : '#8b5cf6',
-                    border: `1px solid ${copied ? 'rgba(16,185,129,0.3)' : 'rgba(139,92,246,0.3)'}`,
+                    background: copied ? 'rgba(16,185,129,0.12)' : 'rgba(255,184,0,0.1)',
+                    color: copied ? '#10b981' : '#FFB800',
+                    border: `1px solid ${copied ? 'rgba(16,185,129,0.3)' : 'rgba(255,184,0,0.3)'}`,
                   }}>
                   {copied ? <><Check size={11} /> Copied!</> : <><Copy size={11} /> Copy</>}
                 </button>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
-                <MapPin size={16} className="text-violet-400 flex-shrink-0" />
+                <MapPin size={16} className="text-yellow-400 flex-shrink-0" />
                 <span>{personalInfo.location}</span>
               </div>
               {views !== null && (
                 <div className="flex items-center gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
-                  <Eye size={16} className="text-violet-400 flex-shrink-0" />
-                  <span><span className="font-bold" style={{ color: '#8b5cf6' }}>{views.toLocaleString()}</span> portfolio views</span>
+                  <Eye size={16} className="text-yellow-400 flex-shrink-0" />
+                  <span><span className="font-bold" style={{ color: '#FFB800' }}>{views.toLocaleString()}</span> portfolio views</span>
                 </div>
               )}
             </div>
@@ -198,14 +198,14 @@ export default function Contact() {
                   <label className="text-xs font-semibold" style={{ color: c.muted }}>Name *</label>
                   <input id="name" name="name" type="text" placeholder="Pranav Ghodke"
                     value={form.name} onChange={handleChange} required style={inputStyle}
-                    onFocus={(e) => { e.target.style.borderColor = '#8b5cf6'; e.target.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.1)'; }}
+                    onFocus={(e) => { e.target.style.borderColor = '#FFB800'; e.target.style.boxShadow = '0 0 0 3px rgba(255,184,0,0.1)'; }}
                     onBlur={(e) => { e.target.style.borderColor = c.inputBorder; e.target.style.boxShadow = 'none'; }} />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-semibold" style={{ color: c.muted }}>Email *</label>
                   <input id="email" name="email" type="email" placeholder="you@example.com"
                     value={form.email} onChange={handleChange} required style={inputStyle}
-                    onFocus={(e) => { e.target.style.borderColor = '#8b5cf6'; e.target.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.1)'; }}
+                    onFocus={(e) => { e.target.style.borderColor = '#FFB800'; e.target.style.boxShadow = '0 0 0 3px rgba(255,184,0,0.1)'; }}
                     onBlur={(e) => { e.target.style.borderColor = c.inputBorder; e.target.style.boxShadow = 'none'; }} />
                 </div>
               </div>
@@ -218,7 +218,7 @@ export default function Contact() {
                 <textarea id="message" name="message" rows={5} placeholder="Tell me about your project or idea..."
                   value={form.message} onChange={handleChange} required
                   style={{ ...inputStyle, resize: 'vertical' }}
-                  onFocus={(e) => { e.target.style.borderColor = '#8b5cf6'; e.target.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.1)'; }}
+                  onFocus={(e) => { e.target.style.borderColor = '#FFB800'; e.target.style.boxShadow = '0 0 0 3px rgba(255,184,0,0.1)'; }}
                   onBlur={(e) => { e.target.style.borderColor = c.inputBorder; e.target.style.boxShadow = 'none'; }} />
                 {/* Char progress bar */}
                 <div className="h-0.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
@@ -239,7 +239,7 @@ export default function Contact() {
               )}
 
               <button type="submit" disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-semibold text-sm text-white cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(139,92,246,0.45)] disabled:opacity-60 disabled:cursor-not-allowed shimmer-btn"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-semibold text-sm text-white cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_rgba(255,184,0,0.45)] disabled:opacity-60 disabled:cursor-not-allowed shimmer-btn"
                 style={{ border: 'none' }}>
                 {loading
                   ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>

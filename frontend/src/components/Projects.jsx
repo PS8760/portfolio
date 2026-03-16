@@ -47,7 +47,7 @@ function ProjectCard({ project, c }) {
           )}
           {isComingSoon && (
             <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full"
-              style={{ background: 'rgba(139,92,246,0.2)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.4)' }}>
+              style={{ background: 'rgba(255,184,0,0.2)', color: '#FFD166', border: '1px solid rgba(255,184,0,0.4)' }}>
               <Clock size={10} /> Coming Soon
             </span>
           )}
@@ -68,7 +68,7 @@ function ProjectCard({ project, c }) {
             </span>
           )}
           <span className="text-xs font-semibold px-2.5 py-1 rounded-full"
-            style={{ background: 'rgba(0,0,0,0.4)', color: '#f1f5f9', backdropFilter: 'blur(8px)' }}>
+            style={{ background: 'rgba(0,0,0,0.4)', color: '#ffffff', backdropFilter: 'blur(8px)' }}>
             {project.tags[0]}
           </span>
         </div>
@@ -91,7 +91,7 @@ function ProjectCard({ project, c }) {
           <div className="flex gap-4">
             {project.github ? (
               <a href={project.github} target="_blank" rel="noreferrer"
-                className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-violet-400"
+                className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-yellow-400"
                 style={{ color: c.muted, textDecoration: 'none' }}>
                 <Github size={15} /> Code
               </a>
@@ -102,7 +102,7 @@ function ProjectCard({ project, c }) {
             )}
             {project.live ? (
               <a href={project.live} target="_blank" rel="noreferrer"
-                className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-violet-400"
+                className="flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-yellow-400"
                 style={{ color: project.liveWorking ? '#10b981' : c.muted, textDecoration: 'none' }}>
                 <ExternalLink size={15} /> {project.liveWorking ? 'Live' : 'Live (down)'}
               </a>
@@ -128,12 +128,12 @@ export default function Projects() {
   const isDark = theme === 'dark';
 
   const c = {
-    bg: isDark ? '#0a0a0f' : '#ffffff',
-    surface: isDark ? '#13131f' : '#f5f5f3',
-    border: isDark ? 'rgba(139,92,246,0.15)' : 'rgba(0,0,0,0.1)',
-    text: isDark ? '#f1f5f9' : '#111111',
+    bg: isDark ? '#0a0a0a' : '#ffffff',
+    surface: isDark ? '#141414' : '#f5f5f3',
+    border: isDark ? 'rgba(255,184,0,0.15)' : 'rgba(0,0,0,0.1)',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
-    divider: isDark ? 'rgba(139,92,246,0.1)' : 'rgba(0,0,0,0.08)',
+    divider: isDark ? 'rgba(255,184,0,0.1)' : 'rgba(0,0,0,0.08)',
   };
 
   useEffect(() => {
@@ -156,7 +156,7 @@ export default function Projects() {
 
         <div className="projects-header text-center mb-14">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4"
-            style={{ color: '#8b5cf6', background: 'rgba(139,92,246,0.1)', borderColor: 'rgba(139,92,246,0.3)' }}>
+            style={{ color: '#FFB800', background: 'rgba(255,184,0,0.1)', borderColor: 'rgba(255,184,0,0.3)' }}>
             My Work
           </span>
           <h2 className="font-extrabold leading-tight mb-3" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: c.text }}>
@@ -176,9 +176,9 @@ export default function Projects() {
         {/* CTA */}
         <div className="text-center mt-12">
           <a href="https://github.com/PS8760" target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(139,92,246,0.3)]"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(255,184,0,0.3)]"
             style={{ background: 'transparent', border: `1px solid ${c.border}`, color: c.muted, textDecoration: 'none' }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#8b5cf6'; e.currentTarget.style.color = '#8b5cf6'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.color = '#FFB800'; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border; e.currentTarget.style.color = c.muted; }}>
             <Github size={16} /> View All on GitHub
           </a>

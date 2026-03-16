@@ -3,8 +3,8 @@ import { useTheme } from '../context/ThemeContext';
 import { Code2, X, ChevronDown } from 'lucide-react';
 
 const activities = [
-  { icon: '⚡', text: 'Building ContentGenei', sub: 'AI for Bharat Hackathon', color: '#06b6d4' },
-  { icon: '🧠', text: 'Learning Machine Learning', sub: 'Python · scikit-learn', color: '#8b5cf6' },
+  { icon: '⚡', text: 'Building ContentGenei', sub: 'AI for Bharat Hackathon', color: '#FF4D00' },
+  { icon: '🧠', text: 'Learning Machine Learning', sub: 'Python · scikit-learn', color: '#FFB800' },
   { icon: '☁️', text: 'Exploring AWS', sub: 'Cloud Architecture', color: '#f59e0b' },
   { icon: '🎬', text: 'Editing a Reel', sub: 'CapCut · Cinematic', color: '#ef4444' },
   { icon: '🎨', text: 'Designing for DevOps Club', sub: 'Canva · Figma', color: '#10b981' },
@@ -36,8 +36,8 @@ export default function NowCoding() {
 
   const c = {
     bg: isDark ? 'rgba(13,13,25,0.92)' : 'rgba(255,255,255,0.95)',
-    border: isDark ? 'rgba(139,92,246,0.3)' : 'rgba(0,0,0,0.12)',
-    text: isDark ? '#f1f5f9' : '#111111',
+    border: isDark ? 'rgba(255,184,0,0.3)' : 'rgba(0,0,0,0.12)',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#666666',
   };
 
@@ -58,8 +58,8 @@ export default function NowCoding() {
         <div className="flex items-center justify-between px-3 py-2 border-b"
           style={{ borderColor: c.border }}>
           <div className="flex items-center gap-2">
-            <Code2 size={13} style={{ color: '#8b5cf6' }} />
-            <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: '#8b5cf6' }}>
+            <Code2 size={13} style={{ color: '#FFB800' }} />
+            <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: '#FFB800' }}>
               Now Active
             </span>
           </div>

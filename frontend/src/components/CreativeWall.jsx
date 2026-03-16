@@ -3,13 +3,13 @@ import { useTheme } from '../context/ThemeContext';
 
 const items = [
   { emoji: '🥇', title: '1st Place — Poster Competition', sub: 'EXALT, APSIT · 2024', desc: 'Designed and won first prize at the annual technical fest.', color: '#f59e0b', size: 'tall' },
-  { emoji: '🎭', title: '1st Place — Drama', sub: 'Ojus Fest, APSIT · 2024', desc: 'Performed and won the drama competition in S.E.', color: '#8b5cf6', size: 'normal' },
-  { emoji: '✏️', title: '100+ Designs', sub: 'DevOps Club · 2025', desc: 'Posters, banners, and social media creatives as Design Coordinator.', color: '#06b6d4', size: 'wide' },
+  { emoji: '🎭', title: '1st Place — Drama', sub: 'Ojus Fest, APSIT · 2024', desc: 'Performed and won the drama competition in S.E.', color: '#FFB800', size: 'normal' },
+  { emoji: '✏️', title: '100+ Designs', sub: 'DevOps Club · 2025', desc: 'Posters, banners, and social media creatives as Design Coordinator.', color: '#FF4D00', size: 'wide' },
   { emoji: '🥈', title: '2nd Place — Project Presentation', sub: 'EXALT, APSIT · 2024', desc: 'Secured second prize in the project presentation event.', color: '#94a3b8', size: 'normal' },
   { emoji: '🤖', title: 'AI for Bharat — Finalist', sub: 'Powered by AWS · 2025', desc: 'Final prototype phase of the national hackathon.', color: '#10b981', size: 'normal' },
   { emoji: '🎞️', title: '50+ Videos Edited', sub: 'Cinematography · 2024', desc: 'Edited reels, short films, and event recaps.', color: '#ef4444', size: 'normal' },
   { emoji: '📸', title: 'Photography', sub: 'Creative · Ongoing', desc: 'Capturing moments — a passion inherited from Aai.', color: '#f59e0b', size: 'wide' },
-  { emoji: '⚡', title: 'Multiple Hackathons', sub: 'Various · 2023–25', desc: 'Led teams, built fast, learned faster.', color: '#8b5cf6', size: 'normal' },
+  { emoji: '⚡', title: 'Multiple Hackathons', sub: 'Various · 2023–25', desc: 'Led teams, built fast, learned faster.', color: '#FFB800', size: 'normal' },
 ];
 
 function BentoCard({ item, i }) {
@@ -45,8 +45,8 @@ export default function CreativeWall() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  const bg = isDark ? '#0a0a0f' : '#f5f5f3';
-  const cardBg = isDark ? '#13131f' : '#ffffff';
+  const bg = isDark ? '#0a0a0a' : '#f5f5f3';
+  const cardBg = isDark ? '#141414' : '#ffffff';
   const border = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.08)';
   const text = isDark ? '#f1f5f9' : '#111111';
   const muted = isDark ? '#94a3b8' : '#666666';
@@ -135,8 +135,8 @@ export default function CreativeWall() {
           display: 'inline-block', fontSize: '0.68rem', fontWeight: 700,
           letterSpacing: '0.1em', textTransform: 'uppercase',
           padding: '5px 14px', borderRadius: '999px',
-          color: '#8b5cf6', background: 'rgba(139,92,246,0.1)',
-          border: '1px solid rgba(139,92,246,0.3)', marginBottom: '14px',
+          color: '#FFB800', background: 'rgba(255,184,0,0.1)',
+          border: '1px solid rgba(255,184,0,0.3)', marginBottom: '14px',
         }}>
           Creative Works
         </span>

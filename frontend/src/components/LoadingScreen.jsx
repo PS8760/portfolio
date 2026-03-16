@@ -33,9 +33,9 @@ export default function LoadingScreen({ onDone }) {
     const angles = new Float32Array(COUNT);
     const heights = new Float32Array(COUNT);
 
-    const c1 = new THREE.Color('#8b5cf6');
-    const c2 = new THREE.Color('#06b6d4');
-    const c3 = new THREE.Color('#f1f5f9');
+    const c1 = new THREE.Color('#FFB800');
+    const c2 = new THREE.Color('#FF4D00');
+    const c3 = new THREE.Color('#ffffff');
 
     for (let i = 0; i < COUNT; i++) {
       const t = i / COUNT;
@@ -75,7 +75,7 @@ export default function LoadingScreen({ onDone }) {
     // ── Glowing center orb ──
     const orbGeo = new THREE.SphereGeometry(0.18, 32, 32);
     const orbMat = new THREE.MeshBasicMaterial({
-      color: 0x8b5cf6,
+      color: 0xFFB800,
       transparent: true,
       opacity: 0.9,
     });
@@ -85,7 +85,7 @@ export default function LoadingScreen({ onDone }) {
     // Orb glow halo
     const haloGeo = new THREE.SphereGeometry(0.38, 32, 32);
     const haloMat = new THREE.MeshBasicMaterial({
-      color: 0x8b5cf6,
+      color: 0xFFB800,
       transparent: true,
       opacity: 0.12,
       side: THREE.BackSide,
@@ -94,13 +94,13 @@ export default function LoadingScreen({ onDone }) {
 
     // ── Thin equatorial ring ──
     const ringGeo = new THREE.TorusGeometry(0.55, 0.008, 8, 120);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.6 });
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0xFF4D00, transparent: true, opacity: 0.6 });
     const ring = new THREE.Mesh(ringGeo, ringMat);
     ring.rotation.x = Math.PI / 2;
     scene.add(ring);
 
     const ring2Geo = new THREE.TorusGeometry(0.85, 0.005, 8, 120);
-    const ring2Mat = new THREE.MeshBasicMaterial({ color: 0x8b5cf6, transparent: true, opacity: 0.35 });
+    const ring2Mat = new THREE.MeshBasicMaterial({ color: 0xFFB800, transparent: true, opacity: 0.35 });
     const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
     ring2.rotation.x = Math.PI / 3;
     ring2.rotation.y = Math.PI / 5;
@@ -195,7 +195,7 @@ export default function LoadingScreen({ onDone }) {
   return (
     <div ref={wrapRef} style={{
       position: 'fixed', inset: 0, zIndex: 99999,
-      background: 'radial-gradient(ellipse at center, #0d0820 0%, #06060f 60%, #000000 100%)',
+      background: 'radial-gradient(ellipse at center, #1a0f00 0%, #0d0800 60%, #000000 100%)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
     }}>
       {/* Three.js canvas */}
@@ -215,11 +215,11 @@ export default function LoadingScreen({ onDone }) {
           color: '#ffffff',
           letterSpacing: '-2px',
           lineHeight: 1,
-          filter: 'drop-shadow(0 0 30px rgba(139,92,246,0.9)) drop-shadow(0 0 60px rgba(139,92,246,0.4))',
+          filter: 'drop-shadow(0 0 30px rgba(255,184,0,0.9)) drop-shadow(0 0 60px rgba(255,77,0,0.4))',
         }}>
-          <span style={{ color: '#8b5cf6' }}>&lt;</span>
+          <span style={{ color: '#FFB800' }}>&lt;</span>
           PG
-          <span style={{ color: '#8b5cf6' }}>/&gt;</span>
+          <span style={{ color: '#FFB800' }}>/&gt;</span>
         </div>
 
         {/* Tagline */}
@@ -243,10 +243,10 @@ export default function LoadingScreen({ onDone }) {
             <div style={{
               height: '100%',
               width: `${pct}%`,
-              background: 'linear-gradient(90deg, #8b5cf6, #06b6d4)',
+              background: 'linear-gradient(90deg, #FFB800, #FF4D00)',
               borderRadius: '99px',
               transition: 'width 0.05s linear',
-              boxShadow: '0 0 12px rgba(139,92,246,0.8)',
+              boxShadow: '0 0 12px rgba(255,184,0,0.8)',
             }} />
           </div>
           <span style={{

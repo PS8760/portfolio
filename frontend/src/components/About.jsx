@@ -8,8 +8,8 @@ import { useTheme } from '../context/ThemeContext';
 gsap.registerPlugin(ScrollTrigger);
 
 const traits = [
-  { icon: <Code2 size={20} />, label: 'Full-Stack Dev', color: '#8b5cf6' },
-  { icon: <Camera size={20} />, label: 'Photographer', color: '#06b6d4' },
+  { icon: <Code2 size={20} />, label: 'Full-Stack Dev', color: '#FFB800' },
+  { icon: <Camera size={20} />, label: 'Photographer', color: '#FF4D00' },
   { icon: <Film size={20} />, label: 'Cinematographer', color: '#f59e0b' },
   { icon: <Lightbulb size={20} />, label: 'Innovator', color: '#10b981' },
 ];
@@ -35,11 +35,11 @@ export default function About() {
   const isDark = theme === 'dark';
 
   const c = {
-    bg: isDark ? '#0a0a0f' : '#ffffff',
-    surface: isDark ? '#13131f' : '#f5f5f3',
-    surface2: isDark ? '#0f0f1a' : '#ebebea',
-    border: isDark ? 'rgba(139,92,246,0.15)' : 'rgba(0,0,0,0.1)',
-    text: isDark ? '#f1f5f9' : '#111111',
+    bg: isDark ? '#0a0a0a' : '#ffffff',
+    surface: isDark ? '#141414' : '#f5f5f3',
+    surface2: isDark ? '#111111' : '#ebebea',
+    border: isDark ? 'rgba(255,184,0,0.15)' : 'rgba(0,0,0,0.1)',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
   };
 
@@ -79,7 +79,7 @@ export default function About() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4"
-            style={{ color: '#8b5cf6', background: 'rgba(139,92,246,0.1)', borderColor: 'rgba(139,92,246,0.3)' }}>
+            style={{ color: '#FFB800', background: 'rgba(255,184,0,0.1)', borderColor: 'rgba(255,184,0,0.3)' }}>
             About Me
           </span>
           <h2 className="font-extrabold leading-tight" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: c.text }}>
@@ -96,7 +96,7 @@ export default function About() {
             <div className="flex items-center gap-5 mb-8 p-5 rounded-2xl border" style={{ background: c.surface, borderColor: c.border }}>
               <div className="relative flex-shrink-0">
                 <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-extrabold"
-                  style={{ background: 'linear-gradient(135deg,#8b5cf6,#06b6d4)', color: 'white' }}>
+                  style={{ background: 'linear-gradient(135deg,#FFB800,#FF4D00)', color: 'white' }}>
                   PG
                 </div>
                 <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 glow-pulse"
@@ -104,7 +104,7 @@ export default function About() {
               </div>
               <div>
                 <h3 className="font-bold text-lg" style={{ color: c.text }}>Pranav Umesh Ghodke</h3>
-                <p className="text-sm font-medium text-violet-400">IT Student & Creative Technologist</p>
+                <p className="text-sm font-medium text-yellow-400">IT Student & Creative Technologist</p>
                 <div className="flex items-center gap-1.5 mt-1 text-xs" style={{ color: c.muted }}>
                   <MapPin size={12} /> A. P. Shah Institute of Technology, Mumbai
                 </div>
@@ -118,10 +118,10 @@ export default function About() {
             <p className="mb-8 leading-relaxed text-[0.95rem]" style={{ color: c.muted }}>
               Beyond code, I bring a creative edge through photography, cinematography, and video editing.
               I've competed in hackathons, led teams, and I'm currently in the final phase of the{' '}
-              <span className="text-violet-400 font-medium">AI for Bharat Hackathon</span> powered by AWS.
+              <span className="text-yellow-400 font-medium">AI for Bharat Hackathon</span> powered by AWS.
               See my creative side on{' '}
               <a href="https://www.instagram.com/ghodke.1984/" target="_blank" rel="noreferrer"
-                className="text-violet-400 border-b border-violet-400/40 hover:border-violet-400 transition-colors font-medium">
+                className="text-yellow-400 border-b border-yellow-500/40 hover:border-yellow-500 transition-colors font-medium">
                 @ghodke.1984
               </a>.
             </p>
@@ -161,8 +161,8 @@ export default function About() {
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className="px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer"
                   style={{
-                    background: activeTab === tab ? (isDark ? '#13131f' : '#ffffff') : 'transparent',
-                    color: activeTab === tab ? '#8b5cf6' : c.muted,
+                    background: activeTab === tab ? (isDark ? '#141414' : '#ffffff') : 'transparent',
+                    color: activeTab === tab ? '#FFB800' : c.muted,
                     boxShadow: activeTab === tab ? '0 1px 4px rgba(0,0,0,0.15)' : 'none',
                     border: 'none',
                   }}>
@@ -175,26 +175,26 @@ export default function About() {
             {activeTab === 'Timeline' && (
               <div className="tab-content relative pl-7">
                 <div className="absolute left-0 top-6 bottom-0 w-px"
-                  style={{ background: 'linear-gradient(to bottom, #8b5cf6, transparent)' }} />
+                  style={{ background: 'linear-gradient(to bottom, #FFB800, transparent)' }} />
 
                 {experience.map((item, i) => (
                   <div key={i} className="relative mb-5">
                     <div className="absolute -left-[1.85rem] top-4 w-8 h-8 rounded-full flex items-center justify-center"
-                      style={{ background: 'linear-gradient(135deg,#8b5cf6,#06b6d4)', color: 'white', boxShadow: '0 0 12px rgba(139,92,246,0.5)' }}>
+                      style={{ background: 'linear-gradient(135deg,#FFB800,#FF4D00)', color: 'white', boxShadow: '0 0 12px rgba(255,184,0,0.5)' }}>
                       {timelineIcons[i]}
                     </div>
                     <div className="p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                       style={{ background: c.surface, borderColor: c.border }}
-                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.4)'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,184,0,0.4)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border; }}>
                       <div className="flex items-start justify-between gap-2 mb-1">
                         <h4 className="font-bold text-[0.95rem]" style={{ color: c.text }}>{item.role}</h4>
                         <span className="text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0"
-                          style={{ color: '#8b5cf6', background: 'rgba(139,92,246,0.1)' }}>
+                          style={{ color: '#FFB800', background: 'rgba(255,184,0,0.1)' }}>
                           {item.year}
                         </span>
                       </div>
-                      <span className="text-sm font-semibold text-cyan-400">{item.org}</span>
+                      <span className="text-sm font-semibold text-orange-400">{item.org}</span>
                       <p className="text-sm mt-2 leading-relaxed" style={{ color: c.muted }}>{item.desc}</p>
                     </div>
                   </div>
@@ -277,19 +277,19 @@ export default function About() {
                                     width: `${pct}%`,
                                     background: isBest
                                       ? 'linear-gradient(90deg, #f59e0b, #fbbf24)'
-                                      : 'linear-gradient(90deg, #8b5cf6, #06b6d4)',
+                                      : 'linear-gradient(90deg, #FFB800, #FF4D00)',
                                   }} />
                               )}
                               {isCurrent && (
                                 <div className="h-full w-1/3 rounded-full animate-pulse"
-                                  style={{ background: 'linear-gradient(90deg, rgba(139,92,246,0.4), transparent)' }} />
+                                  style={{ background: 'linear-gradient(90deg, rgba(255,184,0,0.4), transparent)' }} />
                               )}
                             </div>
                             {/* Value */}
                             <div className="flex items-center gap-1 w-20 flex-shrink-0 justify-end">
                               {isCurrent ? (
                                 <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full"
-                                  style={{ background: 'rgba(139,92,246,0.1)', color: '#8b5cf6' }}>
+                                  style={{ background: 'rgba(255,184,0,0.1)', color: '#FFB800' }}>
                                   In Progress
                                 </span>
                               ) : (

@@ -6,8 +6,8 @@ import { useTheme } from '../context/ThemeContext';
 gsap.registerPlugin(ScrollTrigger);
 
 const radarSkills = [
-  { label: 'Frontend', value: 88, color: '#8b5cf6' },
-  { label: 'Backend', value: 80, color: '#06b6d4' },
+  { label: 'Frontend', value: 88, color: '#FFB800' },
+  { label: 'Backend', value: 80, color: '#FF4D00' },
   { label: 'Database', value: 74, color: '#10b981' },
   { label: 'Tools', value: 82, color: '#f59e0b' },
   { label: 'Deployment', value: 72, color: '#f97316' },
@@ -79,11 +79,11 @@ export default function RadarChart() {
   }, []);
 
   const c = {
-    text: isDark ? '#f1f5f9' : '#111111',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
     grid: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.08)',
-    surface: isDark ? '#13131f' : '#ffffff',
-    border: isDark ? 'rgba(139,92,246,0.15)' : 'rgba(0,0,0,0.1)',
+    surface: isDark ? '#141414' : '#ffffff',
+    border: isDark ? 'rgba(255,184,0,0.15)' : 'rgba(0,0,0,0.1)',
   };
 
   return (
@@ -114,8 +114,8 @@ export default function RadarChart() {
         <polygon
           ref={polygonRef}
           points={animated ? fullPolygon : zeroPolygon}
-          fill="rgba(139,92,246,0.15)"
-          stroke="#8b5cf6"
+          fill="rgba(255,184,0,0.15)"
+          stroke="#FFB800"
           strokeWidth="2"
           strokeLinejoin="round"
         />
@@ -131,7 +131,7 @@ export default function RadarChart() {
               cy={animated ? pt.y : cy}
               r={hovered === i ? 8 : 5}
               fill={skill.color}
-              stroke={isDark ? '#0a0a0f' : '#ffffff'}
+              stroke={isDark ? '#0a0a0a' : '#ffffff'}
               strokeWidth="2"
               className="cursor-pointer transition-all duration-200"
               onMouseEnter={() => setHovered(i)}
@@ -176,7 +176,7 @@ export default function RadarChart() {
         })}
 
         {/* Center dot */}
-        <circle cx={cx} cy={cy} r="3" fill="#8b5cf6" opacity="0.5" />
+        <circle cx={cx} cy={cy} r="3" fill="#FFB800" opacity="0.5" />
       </svg>
 
       {/* Legend */}

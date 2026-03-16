@@ -9,8 +9,8 @@ import RadarChart from './RadarChart';
 gsap.registerPlugin(ScrollTrigger);
 
 const categoryColors = {
-  Frontend: '#8b5cf6',
-  Backend: '#06b6d4',
+  Frontend: '#FFB800',
+  Backend: '#FF4D00',
   Database: '#10b981',
   Language: '#f59e0b',
   Creative: '#ef4444',
@@ -55,7 +55,7 @@ function CircleSkill({ skill, isDark }) {
           <span className="text-lg font-extrabold" style={{ color }}>{skill.level}%</span>
         </div>
       </div>
-      <span className="text-sm font-semibold text-center" style={{ color: isDark ? '#f1f5f9' : '#0f172a' }}>{skill.name}</span>
+      <span className="text-sm font-semibold text-center" style={{ color: isDark ? '#ffffff' : '#0f172a' }}>{skill.name}</span>
       <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ color, background: `${color}15` }}>{skill.category}</span>
     </div>
   );
@@ -68,14 +68,14 @@ export default function Skills() {
   const isDark = theme === 'dark';
 
   const c = {
-    bg: isDark ? '#0f0f1a' : '#f5f5f3',
-    surface: isDark ? '#13131f' : '#ffffff',
-    border: isDark ? 'rgba(139,92,246,0.15)' : 'rgba(0,0,0,0.1)',
-    text: isDark ? '#f1f5f9' : '#111111',
+    bg: isDark ? '#111111' : '#f5f5f3',
+    surface: isDark ? '#141414' : '#ffffff',
+    border: isDark ? 'rgba(255,184,0,0.15)' : 'rgba(0,0,0,0.1)',
+    text: isDark ? '#ffffff' : '#111111',
     muted: isDark ? '#94a3b8' : '#555555',
     barBg: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.08)',
-    tabBg: isDark ? '#13131f' : '#ffffff',
-    tabActiveBg: isDark ? 'rgba(139,92,246,0.12)' : 'rgba(0,0,0,0.08)',
+    tabBg: isDark ? '#141414' : '#ffffff',
+    tabActiveBg: isDark ? 'rgba(255,184,0,0.12)' : 'rgba(0,0,0,0.08)',
   };
 
   const filtered = activeTab === ALL ? skills : skills.filter((s) => s.category === activeTab);
@@ -123,7 +123,7 @@ export default function Skills() {
         {/* Header */}
         <div className="skills-header text-center mb-14">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border mb-4"
-            style={{ color: '#8b5cf6', background: 'rgba(139,92,246,0.1)', borderColor: 'rgba(139,92,246,0.3)' }}>
+            style={{ color: '#FFB800', background: 'rgba(255,184,0,0.1)', borderColor: 'rgba(255,184,0,0.3)' }}>
             What I Know
           </span>
           <h2 className="font-extrabold leading-tight mb-3" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: c.text }}>
@@ -145,12 +145,12 @@ export default function Skills() {
             </p>
             <div className="grid grid-cols-2 gap-3 mt-2">
               {[
-                { label: 'Projects Built', value: '5+', color: '#8b5cf6' },
-                { label: 'Designs Created', value: '100+', color: '#06b6d4' },
+                { label: 'Projects Built', value: '5+', color: '#FFB800' },
+                { label: 'Designs Created', value: '100+', color: '#FF4D00' },
                 { label: 'Videos Edited', value: '50+', color: '#10b981' },
                 { label: 'Avg CGPA', value: '9.32', color: '#f59e0b' },
               ].map(stat => (
-                <div key={stat.label} className="p-3 rounded-xl border" style={{ background: isDark ? '#0f0f1a' : '#f5f5f3', borderColor: c.border }}>
+                <div key={stat.label} className="p-3 rounded-xl border" style={{ background: isDark ? '#111111' : '#f5f5f3', borderColor: c.border }}>
                   <div className="text-xl font-extrabold" style={{ color: stat.color }}>{stat.value}</div>
                   <div className="text-xs mt-0.5" style={{ color: c.muted }}>{stat.label}</div>
                 </div>
@@ -163,7 +163,7 @@ export default function Skills() {
         <div className="flex flex-wrap gap-2 mb-8 justify-center">
           {categories.map((cat) => {
             const isActive = cat === activeTab;
-            const color = cat === ALL ? '#8b5cf6' : categoryColors[cat];
+            const color = cat === ALL ? '#FFB800' : categoryColors[cat];
             return (
               <button key={cat} onClick={() => setActiveTab(cat)}
                 className="px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer border"

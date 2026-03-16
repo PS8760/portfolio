@@ -36,7 +36,7 @@ export default function GlobalBackground() {
           vy: randomBetween(-0.22, 0.22),
           alpha: randomBetween(0.15, 0.55),
           // hue cycles slowly
-          hue: randomBetween(250, 290),
+          hue: randomBetween(25, 45),
           hueSpeed: randomBetween(-0.05, 0.05),
         });
       }
@@ -76,7 +76,7 @@ export default function GlobalBackground() {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = isDark
-              ? `rgba(139,92,246,${opacity})`
+              ? `rgba(255,184,0,${opacity})`
               : `rgba(100,60,200,${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
