@@ -1,11 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 export default function Cursor() {
   const dot = useRef(null);
   const ring = useRef(null);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
+    // Detect touch device — hide cursor on mobile
+    const touch = window.matchMedia('(pointer: coarse)').matches;
+    setIsTouch(touch);
+    if (touch) return;
+
     const onMove = (e) => {
       gsap.to(dot.current, { x: e.clientX, y: e.clientY, duration: 0.1 });
       gsap.to(ring.current, { x: e.clientX, y: e.clientY, duration: 0.35 });
@@ -22,6 +28,8 @@ export default function Cursor() {
 
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
+
+  if (isTouch) return null;
 
   return (
     <>

@@ -213,3 +213,31 @@ html:not(.dark) .hero-img-border {
   0% { transform: scaleX(0); transform-origin: left; }
   100% { transform: scaleX(1); transform-origin: left; }
 }
+
+/* ── Ensure sections sit above global background canvas ── */
+main > section, main > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Easter egg confetti ── */
+@keyframes confetti-fall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes easter-pop {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ── Section reveal animation ── */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

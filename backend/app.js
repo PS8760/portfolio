@@ -2,8 +2,26 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const COUNTER_FILE = join(__dirname, 'views.json');
+
+function getViews() {
+  if (!existsSync(COUNTER_FILE)) return 0;
+  try { return JSON.parse(readFileSync(COUNTER_FILE, 'utf8')).views || 0; }
+  catch { return 0; }
+}
+
+function incrementViews() {
+  const v = getViews() + 1;
+  try { writeFileSync(COUNTER_FILE, JSON.stringify({ views: v })); } catch {}
+  return v;
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,6 +31,16 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({ message: 'Pranav Portfolio API running' });
+});
+
+// View counter
+app.post('/api/views', (req, res) => {
+  const views = incrementViews();
+  res.json({ views });
+});
+
+app.get('/api/views', (req, res) => {
+  res.json({ views: getViews() });
 });
 
 app.post('/api/contact', async (req, res) => {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, Mail, MapPin, Github, Instagram, Linkedin, Twitter, Clock, CheckCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Instagram, Linkedin, Twitter, Clock, CheckCircle, Copy, Check, Eye } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 
@@ -15,6 +15,8 @@ export default function Contact() {
   const [status, setStatus] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [views, setViews] = useState(null);
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -41,6 +43,21 @@ export default function Contact() {
     }, sectionRef);
     return () => ctx.revert();
   }, []);
+
+  // Fetch + increment view counter once
+  useEffect(() => {
+    const API = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+    fetch(`${API}/api/views`, { method: 'POST' })
+      .then(r => r.json())
+      .then(d => setViews(d.views))
+      .catch(() => {});
+  }, []);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -126,14 +143,31 @@ export default function Contact() {
 
             {/* Contact info */}
             <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
-                <Mail size={16} className="text-violet-400 flex-shrink-0" />
-                <span>{personalInfo.email}</span>
+              <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
+                <div className="flex items-center gap-3">
+                  <Mail size={16} className="text-violet-400 flex-shrink-0" />
+                  <span>{personalInfo.email}</span>
+                </div>
+                <button onClick={copyEmail}
+                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer flex-shrink-0"
+                  style={{
+                    background: copied ? 'rgba(16,185,129,0.12)' : 'rgba(139,92,246,0.1)',
+                    color: copied ? '#10b981' : '#8b5cf6',
+                    border: `1px solid ${copied ? 'rgba(16,185,129,0.3)' : 'rgba(139,92,246,0.3)'}`,
+                  }}>
+                  {copied ? <><Check size={11} /> Copied!</> : <><Copy size={11} /> Copy</>}
+                </button>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
                 <MapPin size={16} className="text-violet-400 flex-shrink-0" />
                 <span>{personalInfo.location}</span>
               </div>
+              {views !== null && (
+                <div className="flex items-center gap-3 px-4 py-3 rounded-xl border text-sm" style={{ background: c.surface, borderColor: c.border, color: c.muted }}>
+                  <Eye size={16} className="text-violet-400 flex-shrink-0" />
+                  <span><span className="font-bold" style={{ color: '#8b5cf6' }}>{views.toLocaleString()}</span> portfolio views</span>
+                </div>
+              )}
             </div>
 
             {/* Socials */}

@@ -1,5 +1,10 @@
+import { useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Cursor from './components/Cursor';
+import GlobalBackground from './components/GlobalBackground';
+import LoadingScreen from './components/LoadingScreen';
+import ScrollProgress from './components/ScrollProgress';
+import SectionReveal from './components/SectionReveal';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,19 +17,24 @@ import Footer from './components/Footer';
 import NowCoding from './components/NowCoding';
 
 export default function App() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <ThemeProvider>
+      {!loaded && <LoadingScreen onDone={() => setLoaded(true)} />}
+      <GlobalBackground />
+      <ScrollProgress />
       <Cursor />
       <NowCoding />
       <Header />
-      <main>
+      <main style={{ position: 'relative', zIndex: 1 }}>
         <Hero />
-        <About />
-        <Story />
-        <FilmStrip />
-        <Skills />
-        <Projects />
-        <Contact />
+        <SectionReveal><About /></SectionReveal>
+        <SectionReveal delay={50}><Story /></SectionReveal>
+        <SectionReveal delay={50}><FilmStrip /></SectionReveal>
+        <SectionReveal delay={50}><Skills /></SectionReveal>
+        <SectionReveal delay={50}><Projects /></SectionReveal>
+        <SectionReveal delay={50}><Contact /></SectionReveal>
       </main>
       <Footer />
     </ThemeProvider>

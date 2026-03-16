@@ -192,7 +192,8 @@ export default function Hero() {
           </div>
 
           {/* ── Right: profile image ── */}
-          <div ref={imgRef} className="hero-img-float flex flex-shrink-0 items-start justify-center relative mt-2">
+          <div ref={imgRef} className="hero-img-float flex flex-shrink-0 items-start justify-center relative mt-2"
+            style={{ width: '260px', flexShrink: 0 }}>
             {/* Glow ring */}
             <div className="absolute inset-0 rounded-3xl pointer-events-none"
               style={{ background: 'radial-gradient(circle at center, rgba(139,92,246,0.25) 0%, transparent 70%)', filter: 'blur(40px)', transform: 'scale(1.3)' }} />
@@ -204,8 +205,8 @@ export default function Hero() {
             {/* Image */}
             <div className="relative rounded-3xl overflow-hidden border-2"
               style={{
-                width: 'clamp(220px, 28vw, 320px)',
-                height: 'clamp(420px, 68vh, 620px)',
+                width: '260px',
+                height: '380px',
                 borderColor: 'rgba(139,92,246,0.35)',
                 boxShadow: '0 30px 80px rgba(139,92,246,0.2)',
               }}>
