@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { skills } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 
+import RadarChart from './RadarChart';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const categoryColors = {
@@ -132,9 +134,29 @@ export default function Skills() {
           </p>
         </div>
 
-        {/* Top skills — circular */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-16 p-8 rounded-2xl border" style={{ background: c.surface, borderColor: c.border }}>
-          {topSkills.map((s) => <CircleSkill key={s.name} skill={s} isDark={isDark} />)}
+        {/* Radar chart + top skills */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 p-8 rounded-2xl border items-center" style={{ background: c.surface, borderColor: c.border }}>
+          <RadarChart />
+          <div className="flex flex-col gap-4">
+            <h3 className="font-bold text-lg" style={{ color: c.text }}>Skill Overview</h3>
+            <p className="text-sm leading-relaxed" style={{ color: c.muted }}>
+              A radar view of my core competency areas — hover each axis to see the exact proficiency level.
+              Built through real projects, not just tutorials.
+            </p>
+            <div className="grid grid-cols-2 gap-3 mt-2">
+              {[
+                { label: 'Projects Built', value: '5+', color: '#8b5cf6' },
+                { label: 'Designs Created', value: '100+', color: '#06b6d4' },
+                { label: 'Videos Edited', value: '50+', color: '#10b981' },
+                { label: 'Avg CGPA', value: '9.32', color: '#f59e0b' },
+              ].map(stat => (
+                <div key={stat.label} className="p-3 rounded-xl border" style={{ background: isDark ? '#0f0f1a' : '#f5f5f3', borderColor: c.border }}>
+                  <div className="text-xl font-extrabold" style={{ color: stat.color }}>{stat.value}</div>
+                  <div className="text-xs mt-0.5" style={{ color: c.muted }}>{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Filter tabs */}

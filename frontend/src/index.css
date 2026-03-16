@@ -207,3 +207,9 @@ html:not(.dark) .hero-img-border {
 .hero-img-float {
   animation: hero-float 5s ease-in-out infinite;
 }
+
+/* ── NowCoding progress loop ── */
+@keyframes progress-loop {
+  0% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
