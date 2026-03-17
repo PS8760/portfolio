@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, Mail, MapPin, Github, Instagram, Linkedin, XTwitter, Clock, CheckCircle, Copy, Check, Eye } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Instagram, Linkedin, Clock, CheckCircle, Copy, Check, Eye } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 
@@ -101,7 +101,7 @@ export default function Contact() {
     { icon: <Github size={17} />, href: personalInfo.github, label: 'GitHub', color: isDark ? '#e2e8f0' : '#0f172a' },
     { icon: <Instagram size={17} />, href: personalInfo.instagram, label: 'Instagram', color: '#e1306c' },
     { icon: <Linkedin size={17} />, href: personalInfo.linkedin, label: 'LinkedIn', color: '#0a66c2' },
-    { icon: <XTwitter size={17} />, href: personalInfo.twitter, label: 'Twitter / X', color: '#1d9bf0' },
+    { icon: <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>, href: personalInfo.twitter, label: 'Twitter / X', color: '#1d9bf0' },
   ];
 
   const msgLen = form.message.length;
