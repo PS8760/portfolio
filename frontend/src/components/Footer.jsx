@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, Instagram, Linkedin, Twitter, Heart, ArrowUp, Mail } from 'lucide-react';
+import { Github, Instagram, Linkedin, XTwitter, Heart, ArrowUp, Mail } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 
@@ -31,7 +31,7 @@ export default function Footer() {
     { icon: <Github size={17} />, href: personalInfo.github, label: 'GitHub' },
     { icon: <Instagram size={17} />, href: personalInfo.instagram, label: 'Instagram' },
     { icon: <Linkedin size={17} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-    { icon: <Twitter size={17} />, href: personalInfo.twitter, label: 'Twitter' },
+    { icon: <XTwitter size={17} />, href: personalInfo.twitter, label: 'Twitter' },
   ];
 
   return (

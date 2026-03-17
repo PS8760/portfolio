@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, Mail, MapPin, Github, Instagram, Linkedin, Twitter, Clock, CheckCircle, Copy, Check, Eye } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Instagram, Linkedin, XTwitter, Clock, CheckCircle, Copy, Check, Eye } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 
@@ -101,7 +101,7 @@ export default function Contact() {
     { icon: <Github size={17} />, href: personalInfo.github, label: 'GitHub', color: isDark ? '#e2e8f0' : '#0f172a' },
     { icon: <Instagram size={17} />, href: personalInfo.instagram, label: 'Instagram', color: '#e1306c' },
     { icon: <Linkedin size={17} />, href: personalInfo.linkedin, label: 'LinkedIn', color: '#0a66c2' },
-    { icon: <Twitter size={17} />, href: personalInfo.twitter, label: 'Twitter / X', color: '#1d9bf0' },
+    { icon: <XTwitter size={17} />, href: personalInfo.twitter, label: 'Twitter / X', color: '#1d9bf0' },
   ];
 
   const msgLen = form.message.length;

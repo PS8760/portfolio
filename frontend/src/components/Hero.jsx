@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { Github, Instagram, Linkedin, Twitter, ArrowDown, Sparkles, Download } from 'lucide-react';
+import { Github, Instagram, Linkedin, XTwitter, ArrowDown, Sparkles, Download } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { useTheme } from '../context/ThemeContext';
 import heroImg from '../images/Profile_Pic.jpeg';
@@ -83,7 +83,7 @@ export default function Hero() {
     { icon: <Github size={18} />, href: personalInfo.github, label: 'GitHub' },
     { icon: <Instagram size={18} />, href: personalInfo.instagram, label: 'Instagram' },
     { icon: <Linkedin size={18} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-    { icon: <Twitter size={18} />, href: personalInfo.twitter, label: 'Twitter' },
+    { icon: <XTwitter size={18} />, href: personalInfo.twitter, label: 'Twitter' },
   ];
 
   const c = {
