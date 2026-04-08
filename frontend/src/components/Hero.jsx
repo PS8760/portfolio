@@ -56,7 +56,6 @@ export default function Hero() {
     gsap.to(blob1Ref.current, { x: 40, y: -30, duration: 5, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     gsap.to(blob2Ref.current, { x: -30, y: 20, duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     gsap.to('.scroll-indicator', { y: 8, duration: 1.2, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    // Subtle float on image handled by CSS animation
   }, []);
 
   // Mouse parallax
