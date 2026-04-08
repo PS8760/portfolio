@@ -10,7 +10,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Story from './components/Story';
 import FilmStrip from './components/FilmStrip';
-import Skills from './components/Skills';
+import Skills3D from './components/Skills3D';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -32,7 +32,7 @@ export default function App() {
         <SectionReveal><About /></SectionReveal>
         <SectionReveal delay={50}><Story /></SectionReveal>
         <SectionReveal delay={50}><FilmStrip /></SectionReveal>
-        <SectionReveal delay={50}><Skills /></SectionReveal>
+        <SectionReveal delay={50}><Skills3D /></SectionReveal>
         <SectionReveal delay={50}><Projects /></SectionReveal>
         <SectionReveal delay={50}><Contact /></SectionReveal>
       </main>
